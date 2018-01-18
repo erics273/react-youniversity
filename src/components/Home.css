@@ -1,0 +1,18 @@
+#carousel-college {
+    height: 500px;
+}
+
+#carousel-college img {
+    width: 100%;
+    height: 500px;;
+}
+
+.caption {
+    text-shadow: 2px 2px black;
+    color: rgb(240, 226, 226);
+}
+
+#marketing {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
