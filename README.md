@@ -6,7 +6,7 @@ This branch is a representation of what concepts/topics should be covered day 1 
 * Create-react-app: what is it? 
 * Project structure and how things tick
 * Components, State, and Props without Redux
-* Components, State, and Props wit Redux (high level)
+* Components, State, and Props with Redux (high level)
 * JSX
 * Routing
 
