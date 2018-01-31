@@ -16,3 +16,4 @@ Depending on how things go I may consider hands on lecture and learning on the a
 * Implent Redux covering components, connected components, actions, and reducers
 * Interaction with third party API
 * Introduction to middleware (thunk vs saga)
+* Handling authentication data in a react appliction
