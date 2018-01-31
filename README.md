@@ -1,4 +1,4 @@
-#Day 1: React-YOUniversity
+# Day 1: React-YOUniversity
 
 This branch is a representation of what concepts/topics should be covered day 1 of the reactjs training.
 
