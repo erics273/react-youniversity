@@ -14,7 +14,7 @@ class NavLogin extends Component {
         user.username = form.username.value;
         user.password = form.password.value
   
-        this.props.login(user).then(() => browserHistory.push('/edituser'));
+        this.props.login(user);
         
   
     }
@@ -46,9 +46,9 @@ class NavLogin extends Component {
         console.log(this.props)
         if(this.props.loginFailed){
             statusMessage =  (
-                <Alert bsStyle="danger">
-                    Login Failed
-                </Alert>
+            <Navbar.Text pullRight >
+                Login Failed
+            </Navbar.Text>
             )
         }
     

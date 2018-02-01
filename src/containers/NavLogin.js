@@ -4,7 +4,7 @@ import { login, logout } from '../actions/User'
 import NavLogin from '../components/NavLogin'
 
 const mapStateToProps = state => {
-  console.log(state.user)
+
   return {
     currentUser: state.user.currentUser,
     loginFailed: state.user.loginFailed

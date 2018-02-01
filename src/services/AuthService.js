@@ -1,4 +1,6 @@
 import request from 'superagent';
+import _ from 'lodash';
+import { User } from "../models/User";
 
 const baseUrl = 'http://localhost:8080/api';
 
@@ -9,12 +11,11 @@ export function login(user) {
         .send(user)
         .then(response => {
 
-            localStorage.setItem("currentUser", JSON.stringify(response.body));
+            let authorizedUser = _.pick(response.body, _.keys(new User()))
+            localStorage.setItem("authorized_user", JSON.stringify(authorizedUser));
 
         }
-        ).catch(error => {
-            console.error("could not login user", error);
-        })
+        )
 
 }
 
@@ -26,7 +27,7 @@ export function logout() {
         .send()
         .then(response => {
 
-            localStorage.removeItem("currentUser");
+            localStorage.removeItem("authorized_user");
 
         }
         ).catch(error => {
@@ -34,6 +35,23 @@ export function logout() {
         })
 
 }
+
+export function requireAuth(nextState, replace) {
+    if (!isAuthorized()) {
+        replace({ pathname: '/' });
+    }
+}
+
+export function isAuthorized() {
+
+    if (!localStorage.getItem("authorized_user")) {
+        return false;
+    }
+
+    return true;
+
+}
+
 
 export function register(user) {
 

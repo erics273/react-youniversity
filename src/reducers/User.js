@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 const user = (state = {}, action) => {
     
-    state = {currentUser: JSON.parse(localStorage.getItem("currentUser")) || {} };
+    state = {currentUser: JSON.parse(localStorage.getItem("authorized_user")) || {} };
     
     const newState = _.merge({}, state)
 

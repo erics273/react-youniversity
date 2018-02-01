@@ -16,6 +16,8 @@ import thunk from 'redux-thunk';
 //the reducers put the data in the store
 import reducer from './reducers'
 
+import { requireAuth } from "./services/AuthService";
+
 //Import our components
 import Home from './components/Home'
 import RegisterContainer from "./containers/Register";
@@ -35,7 +37,7 @@ ReactDOM.render(
         <Route path="/" component={App}>
             <IndexRoute component={Home}/>
             <Route path="/register" component={RegisterContainer} />
-            <Route path="/edituser" component={EditUserContainer} />
+            <Route path="/edituser" component={EditUserContainer} onEnter={requireAuth} />
         </Route>
       </Router>
     </div>
