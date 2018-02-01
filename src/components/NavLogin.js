@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Navbar, FormGroup, FormControl, Button } from 'react-bootstrap';
+import { Navbar, FormGroup, FormControl, Button, Alert } from 'react-bootstrap';
 import { Link, browserHistory } from 'react-router';
 
 import {User} from '../models/User'
@@ -14,8 +14,8 @@ class NavLogin extends Component {
         user.username = form.username.value;
         user.password = form.password.value
   
-        this.props.login(user)
-        browserHistory.push('/');
+        this.props.login(user).then(() => browserHistory.push('/edituser'));
+        
   
     }
 
@@ -26,6 +26,8 @@ class NavLogin extends Component {
     }
   
     render() {
+
+        
         
         if(this.props.currentUser.id){
             
@@ -38,10 +40,23 @@ class NavLogin extends Component {
           )
   
         }
+            
+    
+        let statusMessage = "";
+        console.log(this.props)
+        if(this.props.loginFailed){
+            statusMessage =  (
+                <Alert bsStyle="danger">
+                    Login Failed
+                </Alert>
+            )
+        }
+    
 
         return (
             <div>
                 <form onSubmit={this.loginUser}>
+                    {statusMessage}
                     <Navbar.Form pullRight>
                         <FormGroup>
                             <FormControl name="username" type="text" placeholder="username" />

@@ -10,6 +10,9 @@ const user = (state = {}, action) => {
         case "USER_REGISTERED":
             newState.registeredUser = action.result;
             return newState;
+        case "USER_LOGIN_FAILED":
+            newState.loginFailed = true;
+            return newState;
         case "USER_UPDATED":
             newState.updatedUser = action.result;
             return newState;

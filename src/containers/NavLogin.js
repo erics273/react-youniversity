@@ -4,18 +4,20 @@ import { login, logout } from '../actions/User'
 import NavLogin from '../components/NavLogin'
 
 const mapStateToProps = state => {
+  console.log(state.user)
   return {
-    currentUser: state.user.currentUser
+    currentUser: state.user.currentUser,
+    loginFailed: state.user.loginFailed
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     login: (user) => {
-      dispatch(login(user))
+      return dispatch(login(user))
     },
     logout: () => {
-      dispatch(logout())
+      return dispatch(logout())
     }
   }
 }
