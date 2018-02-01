@@ -13,7 +13,10 @@ const user = (state = {}, action) => {
             newState.registeredUser = action.result;
             return newState;
         case "USER_LOGIN_FAILED":
-            newState.loginFailed = true;
+            newState.errorMessage = action.errorMessage;
+            return newState;
+        case "USER_LOGGED_OUT":
+            newState.successMessage = action.successMessage;
             return newState;
         case "USER_UPDATED":
             newState.updatedUser = action.result;

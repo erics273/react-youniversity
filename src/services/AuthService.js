@@ -53,7 +53,7 @@ export function isAuthorized() {
 
 export function getAuthUser() {
 
-    return JSON.parse(localStorage.getItem("authorized_user")) || {};
+    return JSON.parse(localStorage.getItem("authorized_user"));
 
 }
 

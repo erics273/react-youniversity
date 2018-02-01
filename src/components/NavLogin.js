@@ -15,7 +15,7 @@ class NavLogin extends Component {
         user.password = form.password.value
 
         this.props.login(user).then(() => {
-            if (this.props.authorized_user.id) {
+            if (this.props.authorized_user) {
                 browserHistory.push("/edituser")
             }
         });
@@ -26,21 +26,21 @@ class NavLogin extends Component {
     logoutUser = event => {
         event.preventDefault()
         this.props.logout()
-        browserHistory.push('/');
+        browserHistory.push("/")
     }
 
     render() {
 
 
 
-        if (this.props.authorized_user.id) {
+        if (this.props.authorized_user) {
 
             let user = this.props.authorized_user;
 
             return (
                 <Navbar.Text pullRight>
                     Signed in as: <Link to="/edituser">{user.firstName} {user.lastName}</Link> (<Navbar.Link onClick={this.logoutUser} href="#">Logout</Navbar.Link>)
-            </Navbar.Text>
+                </Navbar.Text>
             )
 
         }
