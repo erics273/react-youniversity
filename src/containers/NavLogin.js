@@ -6,7 +6,7 @@ import NavLogin from '../components/NavLogin'
 const mapStateToProps = state => {
 
   return {
-    currentUser: state.user.currentUser,
+    authorized_user: state.user.authorized_user,
     loginFailed: state.user.loginFailed
   }
 }

@@ -6,7 +6,7 @@ import EditUser from '../components/EditUser'
 const mapStateToProps = state => {
   return {
     updatedUser: state.user.updatedUser,
-    currentUser: state.user.currentUser
+    authorized_user: state.user.authorized_user
   }
 }
 

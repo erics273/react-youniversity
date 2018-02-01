@@ -1,8 +1,10 @@
 import _ from 'lodash';
 
+import { getAuthUser } from "../services/AuthService";
+
 const user = (state = {}, action) => {
     
-    state = {currentUser: JSON.parse(localStorage.getItem("authorized_user")) || {} };
+    state = {authorized_user: getAuthUser() };
     
     const newState = _.merge({}, state)
 

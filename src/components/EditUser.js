@@ -59,7 +59,7 @@ class EditUser extends Component {
             <Panel header="YOUniversity Update User">
 
                 <form onSubmit={this.handleFormSubmit}>
-                <input type="hidden" name="username" defaultValue={this.props.currentUser.username} />
+                <input type="hidden" name="username" defaultValue={this.props.authorized_user.username} />
                 <FieldGroup
                     className="form-field"
                     id="formControlsFirstName"
@@ -67,7 +67,7 @@ class EditUser extends Component {
                     label="First Name"
                     placeholder="First Name"
                     name="firstName"
-                    defaultValue={this.props.currentUser.firstName}
+                    defaultValue={this.props.authorized_user.firstName}
                 />
                 <FieldGroup
                     className="form-field"
@@ -76,7 +76,7 @@ class EditUser extends Component {
                     label="Last Name"
                     placeholder="Last Name"
                     name="lastName"
-                    defaultValue={this.props.currentUser.lastName}
+                    defaultValue={this.props.authorized_user.lastName}
                 />
 
                 <FieldGroup
@@ -86,7 +86,7 @@ class EditUser extends Component {
                     label="Username"
                     placeholder="username"
                     name="username"
-                    defaultValue={this.props.currentUser.username}
+                    defaultValue={this.props.authorized_user.username}
                 />
 
                 <FieldGroup

@@ -2,10 +2,10 @@ import * as AuthService from "../services/AuthService";
 
 export function login(user) {
 
-    return dispatch => {
+    return (dispatch, getState) => {
         return AuthService.login(user).then(
-            response => {
-                dispatch({ type: 'USER_LOGIN' });
+            success => {
+                dispatch({ type: 'USER_LOGIN_SUCCESS' });
             },
             error => {
                 dispatch({ type: 'USER_LOGIN_FAILED' });
@@ -17,21 +17,21 @@ export function login(user) {
 export function logout() {
 
     return dispatch => {
-        AuthService.logout().then(
-            response => {
-                dispatch({ type: 'USER_LOGOUT' });
+        return AuthService.logout().then(
+            success => {
+                dispatch({ type: 'USER_LOGGED_OUT' });
             })
     }
 }
 
 export function register(user) {
 
-    return dispatch => {
-        AuthService.register(user).then(
-            response => {
-                dispatch({ type: 'USER_REGISTERED', result: response.body });
-            })
-    }
+//     return dispatch => {
+//         AuthService.register(user).then(
+//             response => {
+//                 dispatch({ type: 'USER_REGISTERED', result: response.body });
+//             })
+//     }
 }
 
 export function updateUser(user) {

@@ -1,6 +1,6 @@
 
 export class User {
-    id = null;;
+    id = null;
     firstName = "";
     lastName = "";
     username = "";
