@@ -1,97 +1,38 @@
-import request from 'superagent';
+import {DataService} from "../services/DataService";
+import { refreshAuth } from "../services/AuthService";
 
-const baseUrl = 'http://localhost:8080/api';
-
-export function login(user) {
-
-    return dispatch => {
-        request.put(`${baseUrl}/session`)
-        .set('Content-Type', 'application/json')
-        .withCredentials()
-        .send(user)
-        .end(
-            (error, response) => {
-                
-                if(error) {
-                    console.error("could not login user" + error);
-                    return;
-                }
-                
-                localStorage.setItem("currentUser", JSON.stringify(response.body));
-
-                dispatch({ type: 'USER_LOGIN' });
-
-            }
-        )
-    }
-}
-
-export function logout() {
-    
-    return dispatch => {
-        request.delete(`${baseUrl}/session`)
-        .set('Content-Type', 'application/json')
-        .withCredentials()
-        .send()
-        .end(
-            (error, response) => {
-                
-                if(error) {
-                    console.error("could not logout user" + error);
-                    return;
-                }
-                
-                localStorage.removeItem("currentUser");
-
-                dispatch({ type: 'USER_LOGOUT' });
-
-            }
-        )
-    }
-}
+const client = new DataService("user");
 
 export function register(user) {
-    
+
     return dispatch => {
-        request.post(`${baseUrl}/user`)
-        .set('Content-Type', 'application/json')
-        .withCredentials()
-        .send(user)
-        .end(
-            (error, response) => {
-                
-                if(error) {
-                    console.error("could not create user" + error);
-                    return;
-                }
-
-                dispatch({ type: 'USER_REGISTERED', result: response.body });
-
+       return client.create(user).then(
+            success => {
+                dispatch({ type: 'USER_REGISTERED', successMessage: "You're now one of us! Login and enjoy." });
+            }
+        ).catch(
+            error => {
+                dispatch({ type: 'USER_REGISTRATION_FAILED', errorMessage: "The other side of the internet rejected the data :(" });
             }
         )
     }
+
 }
 
 export function updateUser(user) {
-    
+
     return dispatch => {
-        request.put(`${baseUrl}/user`)
-        .set('Content-Type', 'application/json')
-        .withCredentials()
-        .send(user)
-        .end(
-            (error, response) => {
-                
-                if(error) {
-                    console.error("could not update user" + error);
-                    return;
-                }
-
-                localStorage.setItem("currentUser", JSON.stringify(response.body));
-
-                dispatch({ type: 'USER_UPDATED', result: response.body });
-
+        return client.update(user).then(
+            success => {
+                refreshAuth().then(()=>{
+                    dispatch({ type: 'USER_UPDATED', successMessage: "Your data has been changed. I hope that's what you wanted" });
+                })
+            }
+        ).catch(
+            error => {
+                dispatch({ type: 'USER_UPDATE_FAILED', errorMessage: "The other side of the internet rejected the data :(" });
             }
         )
     }
+
 }

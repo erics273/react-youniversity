@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { FormGroup, Button, FormControl, ControlLabel, HelpBlock, Panel, Alert } from 'react-bootstrap';
+import { FormGroup, Button, FormControl, ControlLabel, HelpBlock, Panel } from 'react-bootstrap';
 
 //model that represents data that is needed to create a user
 import {User} from '../models/User'
+
+import StatusMessageContainer from "../containers/StatusMessage";
 
 function FieldGroup({ id, label, help, ...props }) {
   return (
@@ -43,23 +45,14 @@ class EditUser extends Component {
     }
 
   render() {
-
-    let statusMessage = "";
-    if(this.props.updatedUser){
-        statusMessage =  (
-            <Alert bsStyle="success">
-                User Updated Successfully
-            </Alert>
-        )
-    }
     
     return (
         <div className="container">
-            {statusMessage}
+            <StatusMessageContainer />
             <Panel header="YOUniversity Update User">
 
                 <form onSubmit={this.handleFormSubmit}>
-                <input type="hidden" name="username" defaultValue={this.props.currentUser.username} />
+                <input type="hidden" name="id" defaultValue={this.props.authorized_user.id} />
                 <FieldGroup
                     className="form-field"
                     id="formControlsFirstName"
@@ -67,7 +60,7 @@ class EditUser extends Component {
                     label="First Name"
                     placeholder="First Name"
                     name="firstName"
-                    defaultValue={this.props.currentUser.firstName}
+                    defaultValue={this.props.authorized_user.firstName}
                 />
                 <FieldGroup
                     className="form-field"
@@ -76,7 +69,7 @@ class EditUser extends Component {
                     label="Last Name"
                     placeholder="Last Name"
                     name="lastName"
-                    defaultValue={this.props.currentUser.lastName}
+                    defaultValue={this.props.authorized_user.lastName}
                 />
 
                 <FieldGroup
@@ -86,7 +79,7 @@ class EditUser extends Component {
                     label="Username"
                     placeholder="username"
                     name="username"
-                    defaultValue={this.props.currentUser.username}
+                    defaultValue={this.props.authorized_user.username}
                 />
 
                 <FieldGroup

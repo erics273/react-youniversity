@@ -1,21 +1,22 @@
 import { connect } from 'react-redux'
-import { login, logout } from '../actions/User'
+import { login, logout } from '../actions/Auth'
 
 import NavLogin from '../components/NavLogin'
 
 const mapStateToProps = state => {
+
   return {
-    currentUser: state.user.currentUser
+    authorized_user: state.auth.authorized_user
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     login: (user) => {
-      dispatch(login(user))
+      return dispatch(login(user))
     },
     logout: () => {
-      dispatch(logout())
+      return dispatch(logout())
     }
   }
 }

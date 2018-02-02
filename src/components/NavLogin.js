@@ -2,42 +2,49 @@ import React, { Component } from 'react'
 import { Navbar, FormGroup, FormControl, Button } from 'react-bootstrap';
 import { Link, browserHistory } from 'react-router';
 
-import {User} from '../models/User'
+import { User } from '../models/User'
 
 class NavLogin extends Component {
-    
+
     loginUser = event => {
         event.preventDefault();
         let form = event.target
-  
+
         let user = new User();
         user.username = form.username.value;
         user.password = form.password.value
-  
-        this.props.login(user)
-        browserHistory.push('/');
-  
+
+        this.props.login(user).then(() => {
+            if (this.props.authorized_user) {
+                browserHistory.push("/edituser")
+            }
+        });
+
+
     }
 
     logoutUser = event => {
         event.preventDefault()
         this.props.logout()
-        browserHistory.push('/');
+        browserHistory.push("/")
     }
-  
+
     render() {
-        
-        if(this.props.currentUser.id){
-            
-          let user = this.props.currentUser;
-  
-          return (
-            <Navbar.Text pullRight>
-              Signed in as: <Link to="/edituser">{user.firstName} {user.lastName}</Link> (<Navbar.Link onClick={this.logoutUser} href="#">Logout</Navbar.Link>)
-            </Navbar.Text>
-          )
-  
+
+
+
+        if (this.props.authorized_user) {
+
+            let user = this.props.authorized_user;
+
+            return (
+                <Navbar.Text pullRight>
+                    Signed in as: <Link to="/edituser">{user.firstName} {user.lastName}</Link> (<Navbar.Link onClick={this.logoutUser} href="#">Logout</Navbar.Link>)
+                </Navbar.Text>
+            )
+
         }
+
 
         return (
             <div>
@@ -60,6 +67,6 @@ class NavLogin extends Component {
             </div>
         );
     }
-  }
+}
 
-  export default NavLogin;
+export default NavLogin;

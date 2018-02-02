@@ -2,16 +2,16 @@ import _ from 'lodash';
 
 const user = (state = {}, action) => {
     
-    state = {currentUser: JSON.parse(localStorage.getItem("currentUser")) || {} };
-    
-    const newState = _.merge({}, state)
+    const newState = _.omit(_.merge({}, state), ["errorMessage", "successMessage"] )
 
     switch (action.type) {
-        case "USER_REGISTERED":
-            newState.registeredUser = action.result;
-            return newState;
         case "USER_UPDATED":
-            newState.updatedUser = action.result;
+        case "USER_REGISTERED":
+            newState.successMessage = action.successMessage;
+            return newState;
+        case "USER_UPDATE_FAILED":
+        case "USER_REGISTRATION_FAILED":
+            newState.errorMessage = action.errorMessage;
             return newState;
         default:
             return newState;
