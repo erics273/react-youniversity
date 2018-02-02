@@ -18,3 +18,32 @@ I would also consider taking out react-bootstrap for [Material-UI](https://mater
 * Add CRUD Functionality for Students and Majors
 * Incorporate testing component into the project
 * Implement server side rendering with JAVA application
+
+## Curriculum Outline
+This is a breakdown of the curriculum for purposes of impoorting to the LMS. 
+
+
+### Basics and best practices
+* create-react-app
+* JSX
+* Project structure
+* Components
+    * props
+    * state
+    * lifecycle
+* Routing
+### Advanced State Mangement
+* Redux and the Flux pattern
+* React-redux
+    * actions
+    * reducers
+    * containers (connected components)
+* Middleware
+    * thunk
+    * saga
+### Testing your react application
+* What tests make sense for you app?
+* Jest
+### Server Side Rendering
+* Why SSR?
+* Server-side rendering with Nashorn
