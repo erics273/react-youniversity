@@ -57,5 +57,5 @@ This is a breakdown of the curriculum for purposes of impoorting to the LMS.
 * Jest
 ### Server Side Rendering
 * Why SSR?
-* Server-side rendering with Nashorn in Java
-    * [Further Reading](https://medium.com/@jimmy_shen/use-nashorn-engine-to-do-server-side-rendering-with-react-eba835e33d77)
+* Server-side rendering with [Nashorn](https://docs.oracle.com/javase/9/nashorn/nashorn-java-api.htm#JSNUG112) in Java
+    * [Tutorial](https://medium.com/@jimmy_shen/use-nashorn-engine-to-do-server-side-rendering-with-react-eba835e33d77)
