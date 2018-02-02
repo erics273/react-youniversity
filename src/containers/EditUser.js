@@ -5,15 +5,14 @@ import EditUser from '../components/EditUser'
 
 const mapStateToProps = state => {
   return {
-    updatedUser: state.user.updatedUser,
-    authorized_user: state.user.authorized_user
+    authorized_user: state.auth.authorized_user
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     updateUser: (user) => {
-      dispatch(updateUser(user))
+      return dispatch(updateUser(user))
     }
   }
 }

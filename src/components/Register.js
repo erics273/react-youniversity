@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FormGroup, Button, FormControl, ControlLabel, HelpBlock, Panel } from 'react-bootstrap';
+import StatusMessageContainer from "../containers/StatusMessage";
 
 //model that represents data that is needed to create a user
 import {User} from '../models/User'
@@ -32,31 +33,20 @@ class Register extends Component {
                 continue;
             }
 
-            formData[input.name] = input.value
+            formData[input.name] = input.value;
                 
         }
 
         //make the api call
-        this.props.register(formData)
+        this.props.register(formData);
 
     }
 
   render() {
-
-    if(this.props.registeredUser){
-        let newUser = this.props.registeredUser;
-        return (
-            <div className="container">
-                <Panel header="Welcome to YOUniversity!">
-                    <h4>Welcome {newUser.firstName}! You registered successfully!</h4>
-                    <p>Please login with your email and password to get started</p>
-                </Panel>
-            </div>
-        )
-    }
     
     return (
         <div className="container">
+            <StatusMessageContainer />
             <Panel header="YOUniversity User Registration">
 
                 <form onSubmit={this.handleFormSubmit}>

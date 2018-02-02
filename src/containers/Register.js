@@ -4,15 +4,13 @@ import { register } from '../actions/User'
 import Register from '../components/Register'
 
 const mapStateToProps = state => {
-  return {
-    registeredUser: state.user.registeredUser
-  }
+  return {}
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     register: (user) => {
-      dispatch(register(user))
+      return dispatch(register(user))
     }
   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FormGroup, Button, FormControl, ControlLabel, HelpBlock, Panel, Alert } from 'react-bootstrap';
+import { FormGroup, Button, FormControl, ControlLabel, HelpBlock, Panel } from 'react-bootstrap';
 
 //model that represents data that is needed to create a user
 import {User} from '../models/User'
@@ -45,15 +45,6 @@ class EditUser extends Component {
     }
 
   render() {
-
-    let statusMessage = "";
-    if(this.props.updatedUser){
-        statusMessage =  (
-            <Alert bsStyle="success">
-                User Updated Successfully
-            </Alert>
-        )
-    }
     
     return (
         <div className="container">
@@ -61,7 +52,7 @@ class EditUser extends Component {
             <Panel header="YOUniversity Update User">
 
                 <form onSubmit={this.handleFormSubmit}>
-                <input type="hidden" name="username" defaultValue={this.props.authorized_user.username} />
+                <input type="hidden" name="id" defaultValue={this.props.authorized_user.id} />
                 <FieldGroup
                     className="form-field"
                     id="formControlsFirstName"

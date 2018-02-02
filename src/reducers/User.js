@@ -1,25 +1,17 @@
 import _ from 'lodash';
 
-import { getAuthUser } from "../services/AuthService";
-
 const user = (state = {}, action) => {
-    
-    state = {authorized_user: getAuthUser() };
     
     const newState = _.merge({}, state)
 
     switch (action.type) {
+        case "USER_UPDATED":
         case "USER_REGISTERED":
-            newState.registeredUser = action.result;
-            return newState;
-        case "USER_LOGIN_FAILED":
-            newState.errorMessage = action.errorMessage;
-            return newState;
-        case "USER_LOGGED_OUT":
             newState.successMessage = action.successMessage;
             return newState;
-        case "USER_UPDATED":
-            newState.updatedUser = action.result;
+        case "USER_UPDATE_FAILED":
+        case "USER_REGISTRATION_FAILED":
+            newState.errorMessage = action.errorMessage;
             return newState;
         default:
             return newState;
