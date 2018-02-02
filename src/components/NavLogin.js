@@ -3,6 +3,7 @@ import { Navbar, FormGroup, FormControl, Button } from 'react-bootstrap';
 import { Link, browserHistory } from 'react-router';
 
 import { User } from '../models/User'
+import { isAuthorized } from "../services/AuthService";
 
 class NavLogin extends Component {
 
@@ -33,7 +34,7 @@ class NavLogin extends Component {
 
 
 
-        if (this.props.authorized_user) {
+        if (isAuthorized()) {
 
             let user = this.props.authorized_user;
 
