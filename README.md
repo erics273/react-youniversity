@@ -18,6 +18,7 @@ I would also consider taking out react-bootstrap for [Material-UI](https://mater
 * Add CRUD Functionality for Students and Majors
 * Incorporate testing component into the project
 * Implement server side rendering with JAVA application
+* Comments
 
 ## Curriculum Outline
 This is a breakdown of the curriculum for purposes of impoorting to the LMS. 
