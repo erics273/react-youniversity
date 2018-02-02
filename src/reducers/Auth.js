@@ -4,9 +4,9 @@ import { getAuth } from "../services/AuthService";
 
 const auth = (state = {}, action) => {
     
-    state = {authorized_user: getAuth() };
+    state.authorized_user = getAuth();
     
-    const newState = _.merge({}, state)
+    const newState = _.omit(_.merge({}, state), ["errorMessage", "successMessage"] )
 
     switch (action.type) {
         case "USER_LOGIN_FAILED":

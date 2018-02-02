@@ -1,11 +1,8 @@
 import _ from 'lodash';
 
 const user = (state = {}, action) => {
-    console.log(state, "eric")
-
-    // state = { errorMessage: null, successMessage: null };
     
-    const newState = _.merge({}, state)
+    const newState = _.omit(_.merge({}, state), ["errorMessage", "successMessage"] )
 
     switch (action.type) {
         case "USER_UPDATED":
