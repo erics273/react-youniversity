@@ -1,10 +1,10 @@
 import _ from 'lodash';
 
-import { getAuthUser } from "../services/AuthService";
+import { getAuth } from "../services/AuthService";
 
 const auth = (state = {}, action) => {
     
-    state = {authorized_user: getAuthUser() };
+    state = {authorized_user: getAuth() };
     
     const newState = _.merge({}, state)
 

@@ -1,6 +1,9 @@
 import _ from 'lodash';
 
 const user = (state = {}, action) => {
+    console.log(state, "eric")
+
+    // state = { errorMessage: null, successMessage: null };
     
     const newState = _.merge({}, state)
 

@@ -8,9 +8,7 @@ export function login(user) {
 
     return client.update(user).then(
         response => {
-            const authorizedUser = _.pick(response.data, _.keys(new User()))
-            localStorage.setItem("authorized_user", JSON.stringify(authorizedUser));
-
+            setAuth(response.data);
         }
     )
 
@@ -20,12 +18,15 @@ export function refreshAuth() {
 
     return client.read().then(
         response => {
-            const authorizedUser = _.pick(response.data, _.keys(new User()))
-            localStorage.setItem("authorized_user", JSON.stringify(authorizedUser));
-
+            setAuth(response.data);
         }
     )
 
+}
+
+function setAuth(user){
+    const authorizedUser = _.pick(user, _.keys(new User()))
+    localStorage.setItem("authorized_user", JSON.stringify(authorizedUser));
 }
 
 export function logout() {
@@ -59,7 +60,7 @@ export function isAuthorized() {
 
 }
 
-export function getAuthUser() {
+export function getAuth() {
 
     return JSON.parse(localStorage.getItem("authorized_user"));
 

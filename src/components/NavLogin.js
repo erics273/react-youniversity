@@ -46,19 +46,8 @@ class NavLogin extends Component {
         }
 
 
-        let statusMessage = "";
-        if (this.props.loginFailed) {
-            statusMessage = (
-                <Navbar.Text pullRight>
-                    Login Failed
-                </Navbar.Text>
-            )
-        }
-
-
         return (
             <div>
-                {statusMessage}
                 <form onSubmit={this.loginUser}>
                     <Navbar.Form pullRight>
                         <FormGroup>
