@@ -16,12 +16,22 @@ I would also consider taking out react-bootstrap for [Material-UI](https://mater
 
 ## TODO
 * Add CRUD Functionality for Students and Majors
-* Incorporate testing component into the project
+* Add tests for service and component - GIO?
 * Implement server side rendering with JAVA application
 * Comments
 
 ## Curriculum Outline
 This is a breakdown of the curriculum for purposes of impoorting to the LMS. 
+
+**NOTES:** 
+* I will Present topics with approriate examples during lecture. 
+* Paticipants will apply those concepts to a starter project. The project will progress as new topics are introduced.
+* There will be versions of the code for students: 
+    * starter 
+    * mid (just incase)
+    * complete
+
+* The SSR portion of the curriclum will have a separate repo
 
 
 ### Basics and best practices
