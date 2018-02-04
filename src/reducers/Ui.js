@@ -2,6 +2,10 @@ import _ from 'lodash';
 
 const  ui = (state = {}, action) => {
 
+    state.flashMessage = "";
+    state.flashType = "";
+    state.showFlash = false;
+
     if(action.result){
         state.flashMessage = action.result.message
         state.flashType = action.result.type;

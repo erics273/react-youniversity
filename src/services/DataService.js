@@ -1,50 +1,45 @@
 import axios from 'axios';
 
+axios.defaults.headers.common['Content-Type'] = 'application/json';
+axios.defaults.withCredentials = true;
+
 export class DataService {
 
     baseUrl;
     endpoint;
+    url;
     client;
 
-    constructor(endpoint, baseUrl = 'http://localhost:8080/api/'){
+    constructor(endpoint, baseUrl = 'http://localhost:8080/api/', client = axios.create()){
         this.endpoint = endpoint;
         this.baseUrl = baseUrl;
-        this.setupClient();
-    }
-
-    setupClient(){
-        axios.defaults.baseURL = this.baseUrl;
-        axios.defaults.headers.common['Content-Type'] = 'application/json';
-        axios.defaults.withCredentials = true;
-        this.client = axios.create();
+        this.url = this.baseUrl+this.endpoint
+        this.client = client;
     }
 
     create(data){
-        return this.client.post(this.endpoint, data);
+        return this.client.post(this.url, data);
     }
 
     read(id){
-        let url = this.endpoint;
         if(id){
-            url += "/"+id;
+            this.url += "/"+id;
         }
-        return this.client.get(url);
+        return this.client.get(this.url);
     }
 
     update(data, id){
-        let url = this.endpoint;
         if(id){
-            url += "/"+id;
+            this.url += "/"+id;
         }
-        return this.client.put(url, data);
+        return this.client.put(this.url, data);
     }
 
     delete(id){
-        let url = this.endpoint;
         if(id){
-            url += "/"+id;
+            this.url += "/"+id;
         }
-        return this.client.delete(url);
+        return this.client.delete(this.url);
     }   
 
 }
