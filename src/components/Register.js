@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { FormGroup, Button, FormControl, ControlLabel, HelpBlock, Panel } from 'react-bootstrap';
-import StatusMessageContainer from "../containers/StatusMessage";
 
 //model that represents data that is needed to create a user
 import {User} from '../models/User'
@@ -45,8 +44,7 @@ class Register extends Component {
   render() {
     
     return (
-        <div className="container">
-            <StatusMessageContainer />
+        <div>
             <Panel header="YOUniversity User Registration">
 
                 <form onSubmit={this.handleFormSubmit}>
@@ -70,7 +68,7 @@ class Register extends Component {
 
                 <FieldGroup
                     className="form-field"
-                    id="formControlsEmail"
+                    id="formControlsUsername"
                     type="string"
                     label="Username"
                     placeholder="Enter username"

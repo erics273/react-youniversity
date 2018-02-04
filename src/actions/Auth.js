@@ -5,7 +5,7 @@ export function login(user) {
     return (dispatch, getState) => {
         return AuthService.login(user).then(
             success => {
-                dispatch({ type: 'USER_LOGIN_SUCCESS' });
+                dispatch({ type: 'USER_LOGIN_SUCCESS', result: {type: "success", message: "", data: {} }});
             }
 
         ).catch(
@@ -22,7 +22,7 @@ export function login(user) {
                         errorMessage = "Not sure what the heck happened but we let someone know"
                     }
                 }
-                dispatch({ type: 'USER_LOGIN_FAILED', errorMessage: errorMessage });
+                dispatch({ type: 'USER_LOGIN_FAILED', result: {type: "error", message: errorMessage, data: {} }});
             })
     }
 }
@@ -32,7 +32,7 @@ export function logout() {
     return dispatch => {
         return AuthService.logout().then(
             success => {
-                dispatch({ type: 'USER_LOGOUT', successMessage: "It was so great seeing you, buh-bye now!" });
+                dispatch({ type: 'USER_LOGOUT', result: {type: "success", message: "It was so great seeing you, buh-bye now!", data: {}  }});
             })
     }
 }

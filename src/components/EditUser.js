@@ -4,8 +4,6 @@ import { FormGroup, Button, FormControl, ControlLabel, HelpBlock, Panel } from '
 //model that represents data that is needed to create a user
 import {User} from '../models/User'
 
-import StatusMessageContainer from "../containers/StatusMessage";
-
 function FieldGroup({ id, label, help, ...props }) {
   return (
     <FormGroup controlId={id}>
@@ -47,8 +45,7 @@ class EditUser extends Component {
   render() {
     
     return (
-        <div className="container">
-            <StatusMessageContainer />
+        <div>
             <Panel header="YOUniversity Update User">
 
                 <form onSubmit={this.handleFormSubmit}>
@@ -74,7 +71,7 @@ class EditUser extends Component {
 
                 <FieldGroup
                     className="form-field"
-                    id="formControlsUserName"
+                    id="formControlsEmail"
                     type="string"
                     label="Email"
                     placeholder="email"

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Home.css';
 
 import { Carousel, Grid, Row, Col, Button } from 'react-bootstrap';
-import StatusMessageContainer from "../containers/StatusMessage";
 
 class Home extends Component {
 
@@ -11,8 +10,7 @@ class Home extends Component {
         return (
             <div>
 
-                <div id="main" className="container text-center">
-                    <StatusMessageContainer />
+                <div className="text-center">
                     <Carousel id="carousel-college">
                         <Carousel.Item>
                             <img src="/assets/graduation1.jpg" alt="graduation1" />

@@ -8,11 +8,11 @@ export function register(user) {
     return dispatch => {
        return client.create(user).then(
             success => {
-                dispatch({ type: 'USER_REGISTERED', successMessage: "You're now one of us! Login and enjoy." });
+                dispatch({ type: 'USER_REGISTERED', result: {type: "success", message: "You're now one of us! Login and enjoy.", data: {}  }});
             }
         ).catch(
             error => {
-                dispatch({ type: 'USER_REGISTRATION_FAILED', errorMessage: "The other side of the internet rejected the data :(" });
+                dispatch({ type: 'USER_REGISTRATION_FAILED', result: {type:"error", message: "The other side of the internet rejected the data :(", data: {}  }});
             }
         )
     }
@@ -25,12 +25,12 @@ export function updateUser(user) {
         return client.update(user).then(
             success => {
                 refreshAuth().then(()=>{
-                    dispatch({ type: 'USER_UPDATED', successMessage: "Your data has been changed. I hope that's what you wanted" });
+                    dispatch({ type: 'USER_UPDATED', result: {type:"success", message: "Your data has been changed. I hope that's what you wanted", data: {}  }});
                 })
             }
         ).catch(
             error => {
-                dispatch({ type: 'USER_UPDATE_FAILED', errorMessage: "The other side of the internet rejected the data :(" });
+                dispatch({ type: 'USER_UPDATE_FAILED', result: {type:"error", message: "The other side of the internet rejected the data :(", data: {}  }});
             }
         )
     }
