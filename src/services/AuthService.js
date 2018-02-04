@@ -25,7 +25,7 @@ export function refreshAuth() {
 }
 
 function setAuth(user){
-    const authorizedUser = _.pick(user, _.keys(new User()))
+    const authorizedUser = _.omit(_.pick(user, _.keys(new User())), ["id"]);
     localStorage.setItem("authorized_user", JSON.stringify(authorizedUser));
 }
 
