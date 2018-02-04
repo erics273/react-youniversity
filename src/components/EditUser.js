@@ -76,6 +76,16 @@ class EditUser extends Component {
                     className="form-field"
                     id="formControlsUserName"
                     type="string"
+                    label="Email"
+                    placeholder="email"
+                    name="email"
+                    defaultValue={this.props.authorized_user.email}
+                />
+
+                <FieldGroup
+                    className="form-field"
+                    id="formControlsUserName"
+                    type="string"
                     label="Username"
                     placeholder="username"
                     name="username"

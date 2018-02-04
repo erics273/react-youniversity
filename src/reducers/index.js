@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
+import youniversity from './Youniversity'
 import auth from './Auth'
-import user from './User'
 
 const reducer = combineReducers({
     auth,
-    user,
+    default: youniversity,
     routing: routerReducer
 })
 

@@ -71,11 +71,21 @@ class Register extends Component {
                 <FieldGroup
                     className="form-field"
                     id="formControlsEmail"
+                    type="string"
+                    label="Username"
+                    placeholder="Enter username"
+                    name="username"
+                />
+
+                <FieldGroup
+                    className="form-field"
+                    id="formControlsEmail"
                     type="email"
                     label="Email address"
                     placeholder="Enter email"
-                    name="username"
+                    name="email"
                 />
+
                 <FieldGroup
                     className="form-field"
                     id="formControlsPassword"
