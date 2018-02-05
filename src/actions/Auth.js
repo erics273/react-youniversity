@@ -5,7 +5,7 @@ export function login(user) {
     return (dispatch, getState) => {
         return AuthService.login(user).then(
             success => {
-                dispatch({ type: 'USER_LOGIN_SUCCESS', result: {type: "success", message: "", data: {} }});
+                dispatch({ type: 'USER_LOGIN_SUCCESS', result: {type: "info", message: "Yay! you remembered your password", data: {} }});
             }
 
         ).catch(

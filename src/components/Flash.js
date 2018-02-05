@@ -1,21 +1,41 @@
 import React, { Component } from 'react';
 
-import { Alert } from 'react-bootstrap';
+import { Alert, Glyphicon, Fade } from 'react-bootstrap';
 
 class Flash extends Component {
 
     render() {
-        let flashMessage = "";
-        if (this.props.showFlash) {
+        let flashMessage = ""; 
+
             flashMessage = (
-                <Alert bsStyle={this.props.flashType === "error" ? 'danger' : 'success'} onDismiss={this.props.hideFlash}>
-                    <strong>{this.props.flashType === "error" ? 'Holy guacamole' : 'Heck Yeah'}! </strong>
-                    {this.props.flashMessage}
-                </Alert>
+                <Fade in={this.props.showFlash}>
+                    <Alert bsStyle="warning" onDismiss={this.props.hideFlash}>
+                        <Glyphicon glyph={this.getGlyphicon(this.props.flashType)} />&nbsp;&nbsp;
+                        {this.props.flashType.toUpperCase()} {this.props.flashMessage}
+                    </Alert>
+                </Fade>
             )
-        }
 
         return (flashMessage);
+    }
+
+    getGlyphicon(flashType){
+        let glyph;
+        switch(flashType){
+            case 'error':
+                glyph = "alert";
+                break;
+            case "success":
+                glyph = "ok-sign";
+                break;
+            case "info":
+            case "warning":
+                glyph = "info-sign";
+                break;
+            default:
+                glyph = "";
+        }
+        return glyph;
     }
 }
 

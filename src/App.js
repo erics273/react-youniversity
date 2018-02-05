@@ -11,7 +11,7 @@ class App extends Component {
         <Navigation />
         <div id="main" className="container">
           <FlashContainer />
-          {this.props.children}
+            {this.props.children}
         </div>
       </div>
     );
