@@ -5,5 +5,5 @@ body {
   background-image: url("/assets/bg2.jpg");
   background-attachment: fixed;
   background-repeat: repeat-x;
-  background-position: bottom;
+  background-position: 0% 75%;
 }
