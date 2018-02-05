@@ -3,7 +3,7 @@ import _ from 'lodash';
 const  ui = (state = {}, action) => {
 
     state.flashMessage = "";
-    state.flashType = "";
+    state.flashType = state.flashType || "";
     state.showFlash = false;
 
     if(action.result){
@@ -11,7 +11,6 @@ const  ui = (state = {}, action) => {
         state.flashType = action.result.type;
         state.showFlash = !!(action.result.message) 
     }
-    
     
     const newState = _.merge({}, state)
 

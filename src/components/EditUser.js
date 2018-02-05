@@ -46,7 +46,7 @@ class EditUser extends Component {
     
     return (
         <div>
-            <Panel header="YOUniversity Update User">
+            <Panel bsStyle="primary" header="Update User">
 
                 <form onSubmit={this.handleFormSubmit}>
                 <input type="hidden" name="id" defaultValue={this.props.authorized_user.id} />

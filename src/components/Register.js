@@ -45,7 +45,7 @@ class Register extends Component {
     
     return (
         <div>
-            <Panel header="YOUniversity User Registration">
+            <Panel bsStyle="primary" header="User Registration">
 
                 <form onSubmit={this.handleFormSubmit}>
 

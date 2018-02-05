@@ -9,7 +9,7 @@ class Flash extends Component {
 
             flashMessage = (
                 <Fade in={this.props.showFlash}>
-                    <Alert bsStyle="warning" onDismiss={this.props.hideFlash}>
+                    <Alert bsStyle={this.props.flashType == "error" ? "danger" : "info"} onDismiss={this.props.hideFlash}>
                         <Glyphicon glyph={this.getGlyphicon(this.props.flashType)} />&nbsp;&nbsp;
                         {this.props.flashType.toUpperCase()} {this.props.flashMessage}
                     </Alert>
