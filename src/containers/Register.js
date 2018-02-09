@@ -28,4 +28,22 @@ export default connect(
 //responsible for registering new users. Consider what actions
 //you may need to run to register a new user.
 
+import { connect } from 'react-redux'
+
+import Register from '../components/Register'
+
+const mapStateToProps = state => {
+  return {}
+}
+
+const mapDispatchToProps = dispatch => {
+  return {}
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Register)
+
 END SOLUTION */

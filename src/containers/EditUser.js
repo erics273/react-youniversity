@@ -30,4 +30,22 @@ export default connect(
 //responsible for editing the authenticated users. Consider what actions
 //you may need to run to edit a new user.
 
+import { connect } from 'react-redux'
+
+import EditUser from '../components/EditUser'
+
+const mapStateToProps = state => {
+  return {}
+}
+
+const mapDispatchToProps = dispatch => {
+  return {}
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EditUser)
+
 END SOLUTION */

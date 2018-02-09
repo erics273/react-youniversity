@@ -38,4 +38,22 @@ export default connect(
 //
 //Consider what you may need from state to display authorized users details.
 
+import { connect } from 'react-redux'
+
+import NavLogin from '../components/NavLogin'
+
+const mapStateToProps = state => {
+
+  return {}
+}
+
+const mapDispatchToProps = dispatch => {
+  return {}
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NavLogin)
+
 END SOLUTION */
