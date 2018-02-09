@@ -23,4 +23,20 @@ export default auth
 //It's main purpose for this project is to make sure that if we have an authorized
 //user that the details are avaialble in the application state.
 
+import _ from 'lodash';
+
+const  auth = (state = {}, action) => {
+    
+    const newState = _.merge({}, state)
+
+    switch (action.type) {
+        
+        default:
+            return newState;
+        }
+}
+
+export default auth
+
 END SOLUTION */
+
