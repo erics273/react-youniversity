@@ -17,7 +17,10 @@ class NavLogin extends Component {
 
         this.props.login(user).then(() => {
             if (this.props.authorized_user) {
-                browserHistory.push("/edituser")
+                setTimeout(()=>{
+                    browserHistory.push("/edituser")
+                }, 2000)
+                
             }
         });
 
