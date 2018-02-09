@@ -7,7 +7,7 @@ import { isAuthorized } from "../services/AuthService";
 
 class NavLogin extends Component {
 
-    loginUser = event => {
+    loginUser(event) {
         event.preventDefault();
         let form = event.target
 
@@ -27,7 +27,7 @@ class NavLogin extends Component {
 
     }
 
-    logoutUser = event => {
+    logoutUser(event) {
         event.preventDefault()
         this.props.logout()
         browserHistory.push("/")
