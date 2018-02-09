@@ -9,8 +9,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
-import { createStore, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk';
+import { createStore } from 'redux'
 
 //Import of our reducers.
 //the reducers put the data in the store
@@ -24,7 +23,7 @@ import RegisterContainer from "./containers/Register";
 import EditUserContainer from "./containers/EditUser";
 
 //create the store with our reducers
-let store = createStore(reducer, applyMiddleware(thunk))
+let store = createStore(reducer)
 
 //keep our routing history synced with the store
 const history = syncHistoryWithStore(browserHistory, store)

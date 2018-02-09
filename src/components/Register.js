@@ -1,5 +1,7 @@
+/* START SOLUTION */
 import React, { Component } from 'react';
 import { FormGroup, Button, FormControl, ControlLabel, HelpBlock, Panel } from 'react-bootstrap';
+import { browserHistory } from 'react-router';
 
 //model that represents data that is needed to create a user
 import {User} from '../models/User'
@@ -38,6 +40,10 @@ class Register extends Component {
 
         //make the api call
         this.props.register(formData);
+
+        setTimeout(() => {
+            browserHistory.push("/edituser")
+        }, 1000)
 
     }
 
@@ -105,3 +111,103 @@ class Register extends Component {
 
 
 export default Register;
+
+/* ELSE
+
+import React, { Component } from 'react';
+import { FormGroup, Button, FormControl, ControlLabel, HelpBlock, Panel } from 'react-bootstrap';
+
+//model that represents data that is needed to create a user
+import {User} from '../models/User'
+
+function FieldGroup({ id, label, help, ...props }) {
+  return (
+    <FormGroup controlId={id}>
+      <ControlLabel>{label}</ControlLabel>
+      <FormControl {...props} />
+      {help && <HelpBlock>{help}</HelpBlock>}
+    </FormGroup>
+  );
+}
+
+class Register extends Component {
+
+    //method that runs when the form is submitted
+    handleFormSubmit = formSubmitEvent => {
+
+        //This method should populate a User model from the form data.
+        //
+        //Use the action(s) provided by the container that 
+        //rendered this component to submit the data
+        //for registration. 
+        // 
+        //You should be able to login with the new user
+        //on successful registration
+    }
+
+  render() {
+    
+    return (
+        <div>
+            <Panel bsStyle="primary" header="User Registration">
+
+                <form onSubmit={this.handleFormSubmit}>
+
+                <FieldGroup
+                    className="form-field"
+                    id="formControlsFirstName"
+                    type="string"
+                    label="First Name"
+                    placeholder="First Name"
+                    name="firstName"
+                />
+                <FieldGroup
+                    className="form-field"
+                    id="formControlsLastName"
+                    type="string"
+                    label="Last Name"
+                    placeholder="Last Name"
+                    name="lastName"
+                />
+
+                <FieldGroup
+                    className="form-field"
+                    id="formControlsUsername"
+                    type="string"
+                    label="Username"
+                    placeholder="Enter username"
+                    name="username"
+                />
+
+                <FieldGroup
+                    className="form-field"
+                    id="formControlsEmail"
+                    type="email"
+                    label="Email address"
+                    placeholder="Enter email"
+                    name="email"
+                />
+
+                <FieldGroup
+                    className="form-field"
+                    id="formControlsPassword"
+                    type="password"
+                    label="Password"
+                    placeholder="Password"
+                    name="password"
+                />
+
+                <Button  className="btn btn-default"type="submit">Create Profile</Button>
+
+                </form>
+            </Panel>
+        </div>
+
+    );
+  }
+}
+
+
+export default Register;
+
+END SOLUTION */
