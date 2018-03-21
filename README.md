@@ -17,7 +17,7 @@ This is the starting point of the front-end of the YOUniversity application. You
 
 ## Project Setup
 
-* Fork the repository from the [hackreactor](https://github.com/hackreactor) organization to your own GitHub account. The repository will have the following naming convention: `{your cohort id}-youniversity-frontend.`
+* Fork the repository from the [hackreactor](https://github.com/hackreactor) organization to your own GitHub account. The repository will have the following naming convention: `{your cohort id}-youniversity-frontend`.
 
 * Clone the forked repository to your local machine
 
