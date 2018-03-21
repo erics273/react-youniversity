@@ -1,8 +1,9 @@
-
-export class User {
-    id = null;
+class User {
     firstName = "";
     lastName = "";
     email = "";
     username = "";
+    password = "";
 }
+
+export default User

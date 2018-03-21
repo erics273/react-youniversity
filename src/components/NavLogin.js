@@ -1,36 +1,29 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Navbar, FormGroup, FormControl, Button } from 'react-bootstrap';
 import { Link, browserHistory } from 'react-router';
 
-import { User } from '../models/User'
+import User from '../models/User';
 import { isAuthorized } from "../services/AuthService";
 
 class NavLogin extends Component {
 
     loginUser = event => {
         event.preventDefault();
-        let form = event.target
+        let form = event.target;
 
         let user = new User();
         user.username = form.username.value;
-        user.password = form.password.value
+        user.password = form.password.value;
 
-        this.props.login(user).then(() => {
-            if (this.props.authorized_user) {
-                setTimeout(()=>{
-                    browserHistory.push("/edituser")
-                }, 2000)
-                
-            }
-        });
-
+        this.props.login(user);
 
     }
 
     logoutUser = event => {
-        event.preventDefault()
-        this.props.logout()
-        browserHistory.push("/")
+        event.preventDefault();
+        browserHistory.push("/");
+        this.props.logout();
+
     }
 
     render() {
