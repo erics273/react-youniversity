@@ -16,6 +16,7 @@ class NavLogin extends Component {
         user.password = form.password.value;
 
         this.props.login(user);
+        event.target.reset();
 
     }
 
