@@ -3,7 +3,7 @@ import axios from 'axios';
 axios.defaults.headers.common['Content-Type'] = 'application/json';
 axios.defaults.withCredentials = true;
 
-export class DataService {
+class DataService {
 
     baseUrl;
     endpoint;
@@ -17,29 +17,22 @@ export class DataService {
         this.client = client;
     }
 
-    create(data){
+    post(data){
         return this.client.post(this.url, data);
     }
 
-    read(id){
-        if(id){
-            this.url += "/"+id;
-        }
+    get(){
         return this.client.get(this.url);
     }
 
-    update(data, id){
-        if(id){
-            this.url += "/"+id;
-        }
+    put(data){
         return this.client.put(this.url, data);
     }
 
-    delete(id){
-        if(id){
-            this.url += "/"+id;
-        }
+    delete(){
         return this.client.delete(this.url);
     }   
 
 }
+
+export default DataService

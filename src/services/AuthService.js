@@ -1,12 +1,12 @@
-import { DataService } from './DataService'
+import DataService from './DataService'
 import _ from 'lodash';
-import { User } from "../models/User";
+import User from "../models/User";
 
 const client = new DataService("session");
 
 export function login(user) {
 
-    return client.update(user).then(
+    return client.put(user).then(
         response => {
             setAuth(response.data);
         }
@@ -16,7 +16,7 @@ export function login(user) {
 
 export function refreshAuth() {
 
-    return client.read().then(
+    return client.get().then(
         response => {
             setAuth(response.data);
         }
@@ -25,7 +25,7 @@ export function refreshAuth() {
 }
 
 function setAuth(user){
-    const authorizedUser = _.omit(_.pick(user, _.keys(new User())), ["id"]);
+    const authorizedUser = _.omit(_.pick(user, _.keys(new User())), ["password"]);
     localStorage.setItem("authorized_user", JSON.stringify(authorizedUser));
 }
 
