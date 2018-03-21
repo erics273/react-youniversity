@@ -41,7 +41,7 @@ Here's a list of files you will touch throughout this project. Note that they ar
 * `src/actions/User.js`
 
 ### Normal Mode
-Everyone is expected to complete normal mode. After complete you should be able to login and logout using the provided "admin" user. On successful log, the users details should replace the login form in the UI.
+Everyone is expected to complete normal mode. After completing Normal mode you should be able to login and logout using the provided credentials. On successful login, the users details should replace the login form in the UI.
 
 **API Credentials:** admin/password
 
@@ -53,7 +53,7 @@ Files touched in Normal Mode:
 * `src/actions/Auth.js`
 
 ### Hard Mode
-Hard mode should be completed only if Normal Mode has been completed. Hard mode is not required but is good practice to enforce the concepts from lecture.
+Hard mode should be completed only if Normal Mode has been completed. Hard mode is not required but is good practice to enforce the concepts from lecture. After completing Hard Mode you should be able to create new users and update the current user.
 
 Files touched in Hard Mode:
 
