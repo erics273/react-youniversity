@@ -10,8 +10,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    register: (user) => {
-      register(user)
+    register: (success) => {
+      dispatch(register(success))
     }
   }
 }

@@ -1,13 +1,9 @@
-/* START SOLUTION */
-export class User {
-    id = null;
+class User {
     firstName = "";
     lastName = "";
     email = "";
     username = "";
+    password = "";
 }
-/* ELSE
 
-//This model should represent our user data sent and recieved from our third party service
-
-END SOLUTION */
+export default User

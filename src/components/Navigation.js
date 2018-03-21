@@ -7,8 +7,6 @@ import NavLoginContainer from '../containers/NavLogin'
 
 class Navigation extends Component {
 
-    userDetails = <NavLoginContainer />;
-
     render() {
         return (
             <Navbar inverse fixedTop collapseOnSelect>
@@ -19,7 +17,7 @@ class Navigation extends Component {
                 <Navbar.Toggle />
                 </Navbar.Header>
                 <Navbar.Collapse>
-                    {this.userDetails}
+                    <NavLoginContainer />
                 </Navbar.Collapse>
             </Navbar>
         );

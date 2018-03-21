@@ -1,36 +1,25 @@
-import { DataService } from "../services/DataService";
-import { refreshAuth } from "../services/AuthService";
+/* START SOLUTION */
 
-const client = new DataService("user");
+export function register(success) {
 
-export function register(user) {
-
-    client.create(user).then(
-        success => {
-            return { type: 'USER_REGISTERED' };
-        }
-    ).catch(
-        error => {
-            return { type: 'USER_REGISTRATION_FAILED' };
-        }
-        )
-
+    return { type: (success) ? 'REGISTRATION_SUCCESS' :  'REGISTRATION_FAIL' };
 
 }
 
-export function updateUser(user) {
+export function update(success) {
 
-    client.update(user).then(
-        success => {
-            refreshAuth().then(() => {
-                return { type: 'USER_UPDATED' };
-            })
-        }
-    ).catch(
-        error => {
-            return { type: 'USER_UPDATE_FAILED' };
-        }
-        )
-
-
+    return { type: (success) ? 'USER_UPDATE_SUCCESS' : 'USER_UPDATE_FAIL' };
 }
+
+
+/* ELSE
+
+//The User.js actions file is responsible for holding the Action Creators that support the registration of new users 
+//and the updating of existing user information. Consider the scenarios a user might encounter when trying to register
+//or update a users information.
+
+//NOTE: Action Creators should return simple JavaScript objects with at least a "type" attribute.
+//      It is best practices to use constants for your action type. Consider creating a actionTypes.js file 
+//      that holds your actionType constants and importing the relevent actions into this file.
+
+END SOLUTION */

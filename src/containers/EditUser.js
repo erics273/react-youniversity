@@ -1,6 +1,6 @@
 /* START SOLUTION */
 import { connect } from 'react-redux'
-import { updateUser } from '../actions/User'
+import { update } from '../actions/User'
 
 import EditUser from '../components/EditUser'
 
@@ -12,8 +12,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateUser: (user) => {
-      updateUser(user)
+    update: (success) => {
+      dispatch(update(success));
     }
   }
 }

@@ -1,8 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+# YOUniversity Front-End
+This is the starting point of the front-end of the YOUniversity application. You should clone this repository for use in your work over the next few days. You can find your code in the [hackreactor](https://github.com/hackreactor) organization at GitHub. The name of the repository will be the id of your cohort suffixed with `youniversity-frontend`
 
-For future projects I will consider using the [TypeScript-React-Starter](https://github.com/Microsoft/TypeScript-React-Starter). 
+## High level goals of this project
+* Acquaint yourself with the principles that dictate the construction of a React application and to unify the concepts from the first day in a representative application.
 
-I would also consider taking out react-bootstrap for [Material-UI](https://material-ui-next.com/). I am also open to some manual styling and understanding more about [Material Design](https://material.io/)
+* Understand the basic concepts related to Redux and how to construct the basic tools for managing state.
 
 ## Tech
 * [reactjs](https://reactjs.org/)
@@ -12,50 +14,28 @@ I would also consider taking out react-bootstrap for [Material-UI](https://mater
 * [react-bootstrap](https://react-bootstrap.github.io/)
 * [lodash](https://lodash.com/)
 * [axios](https://github.com/axios/axios)
-* [redux-thunk](https://github.com/gaearon/redux-thunk)
 
-## TODO
-* Add CRUD Functionality for Students and Majors
-* Add tests for service and component - GIO?
-* Implement server side rendering with JAVA application
-* Comments
+## Project Setup
 
-## Curriculum Outline
-This is a breakdown of the curriculum for purposes of impoorting to the LMS. 
+* Fork the repository from the [hackreactor](https://github.com/hackreactor) organization to your own GitHub account. The repository will have the following naming convention: `{your cohort id}-youniversity-frontend.`
 
-**NOTES:** 
-* I will Present topics with approriate examples during lecture. 
-* Paticipants will apply those concepts to a starter project. The project will progress as new topics are introduced.
-* There will be versions of the code for students: 
-    * starter 
-    * mid (just incase)
-    * complete
+* Clone the forked repository to your local machine
 
-* The SSR portion of the curriclum will have a separate repo
+* Run `npm install` from the root of the project
 
+* Run `npm start` from the root of the project to start the application in development mode
 
-### Basics and best practices
-* create-react-app
-* JSX
-* Project structure
-* Components
-    * props
-    * state
-    * lifecycle
-* Routing
-### Advanced State Mangement
-* Redux and the Flux pattern
-* React-redux
-    * actions
-    * reducers
-    * containers (connected components)
-* Middleware
-    * thunk
-    * saga
-### Testing your react application
-* What tests make sense for you app?
-* Jest
-### Server Side Rendering
-* Why SSR?
-* Server-side rendering with [Nashorn](https://docs.oracle.com/javase/9/nashorn/nashorn-java-api.htm#JSNUG112) in Java
-    * [Tutorial](https://medium.com/@jimmy_shen/use-nashorn-engine-to-do-server-side-rendering-with-react-eba835e33d77)
+* Open http://localhost:3000 to view it in the browser.
+
+## Project Requirements
+
+Here's a list of files you will touch throughout this project. Note that they are not listed in any particular order. Once you've followed the commented instructions in each of the files,your version of YOUniversity will allow a person to register, log in/out, and maintain their information in YOUniversity.
+
+* `src/components/NavLogin.js`
+* `src/components/UserForm.js`
+* `src/containers/EditUser.js`
+* `src/containers/NavLogin.js`
+* `src/containers/Register.js`
+* `src/reducers/Auth.js`
+* `src/actions/Auth.js`
+* `src/actions/User.js`

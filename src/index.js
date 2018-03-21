@@ -23,7 +23,7 @@ import RegisterContainer from "./containers/Register";
 import EditUserContainer from "./containers/EditUser";
 
 //create the store with our reducers
-let store = createStore(reducer)
+let store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 //keep our routing history synced with the store
 const history = syncHistoryWithStore(browserHistory, store)
