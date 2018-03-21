@@ -43,6 +43,8 @@ Here's a list of files you will touch throughout this project. Note that they ar
 ### Normal Mode
 Everyone is expected to complete normal mode. After complete you should be able to login and logout using the provided "admin" user. On successful log, the users details should replace the login form in the UI.
 
+**API Credentials:** admin/password
+
 Files touched in Normal Mode:
 
 * `src/components/NavLogin.js`
