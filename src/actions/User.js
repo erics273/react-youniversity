@@ -1,4 +1,3 @@
-/* START SOLUTION */
 import DataService from "../services/DataService";
 import { refreshAuth } from "../services/AuthService";
 
@@ -37,31 +36,3 @@ export function updateUser(user) {
     }
 
 }
-/* ELSE
-import DataService from "../services/DataService";
-import { refreshAuth } from "../services/AuthService";
-
-const client = new DataService("user");
-
-export function register(user) {
-
-    return dispatch => {
-       //Use the client to register a user against the API. 
-       //On success/fail dipatch the appropriate action that reflects the result
-       //Use the same format as objects dispatched in actions/Auth.js 
-    }
-
-}
-
-export function updateUser(user) {
-
-    return dispatch => {
-       //Use the client to update a user in the API. 
-       //On success/fail dipatch the appropriate action that reflects the result
-       //Use the same format as objects dispatched in actions/Auth.js 
-       //On update success we should call the "refreshAuth()" method from our AuthService to make sure the updated user info makes it into
-       //local storage before dispatching our object.
-    }
-
-}
-END SOLUTION */
