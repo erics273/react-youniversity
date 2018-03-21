@@ -10,7 +10,7 @@ class DataService {
     url;
     client;
 
-    constructor(endpoint, baseUrl = 'http://localhost:8080/api/', client = axios.create()){
+    constructor(endpoint, baseUrl = 'https://hr-youniversity.herokuapp.com/api/', client = axios.create()){
         this.endpoint = endpoint;
         this.baseUrl = baseUrl;
         this.url = this.baseUrl+this.endpoint
